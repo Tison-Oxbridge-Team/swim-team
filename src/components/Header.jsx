@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <div className="bg-gray-100 h-16 flex justify-between items-center p-6 pl-16">
+      <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16">
         <nav className="flex flex-grow justify-start">
           <ul className="flex space-x-8">
             <li>
               <Link
                 to="/"
-                className="text-gray-700 hover:text-blue-500 text-lg font-bold"
+                className="text-white hover:text-blue-300 text-lg font-bold"
               >
                 AI4Swim
               </Link>
@@ -17,7 +17,7 @@ const Header = () => {
             <li className="opacity-60">
               <Link
                 to="/data"
-                className="text-gray-700 hover:text-blue-500 text-lg"
+                className="text-white hover:text-blue-300 text-lg"
               >
                 Live Dashboard
               </Link>
@@ -25,16 +25,16 @@ const Header = () => {
             <li className="relative">
               <Link
                 to="/data"
-                className="text-gray-700 hover:text-blue-500 text-lg font-semibold"
+                className="text-white hover:text-blue-300 text-lg font-semibold"
               >
                 Live Coaching
               </Link>
-              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 -mb-2"></div>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
             </li>
             <li className="opacity-60">
               <Link
                 to="/data"
-                className="text-gray-700 hover:text-blue-500 text-lg"
+                className="text-white hover:text-blue-300 text-lg"
               >
                 Post Session Analysis
               </Link>
@@ -43,12 +43,12 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <img 
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&s" 
-            alt="Avatar" 
-            className="w-10 h-10 rounded-full" 
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&s"
+            alt="Avatar"
+            className="w-10 h-10 rounded-full"
           />
-          <span className="text-gray-700 text-lg font-semibold">John Doe</span>
+          <span className="text-white text-lg font-semibold">John Doe</span>
         </div>
       </div>
     </header>
