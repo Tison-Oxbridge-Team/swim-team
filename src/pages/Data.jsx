@@ -37,7 +37,8 @@ const Data = () => {
         <div>
           <select className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400">
             <option value="Compare With Yourself">Compare With Yourself</option>
-            <option value="Compare With Yourself">Compare With Others</option>
+            <option value="Compare With Others">Compare With Others</option>
+            <option value="Compare With Pose Analysis">Pose Analysis</option>
           </select>
         </div>
       </div>
