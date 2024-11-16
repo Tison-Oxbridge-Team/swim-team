@@ -1,8 +1,14 @@
+import { Routes, Route } from "react-router-dom";
+import Data from "./pages/Data";
+import Coaching from "./pages/Coaching";
+import Home from "./pages/Home";
 function App() {
   return (
-    <div className="flex items-center justify-center h-screen">
-      <h1 className="font-bold text-6xl text-green-500">Swim Team</h1>
-    </div>
+    <Routes>
+      <Route path="/data" element={<Data />} />
+      <Route path="/coaching" element={<Coaching />} />
+      <Route path="/" element={<Home />} />
+    </Routes>
   );
 }
 
