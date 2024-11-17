@@ -7,13 +7,32 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Label,
+  Legend
 } from "recharts";
 
-// Hardcoded data from CSV with descriptive keys
 const chartData = [
-  { name: "Lap 1", lapTime: 36.11, dps: 1.47, strokeCount: 34, breathCount: 12 },
-  { name: "Lap 2", lapTime: 36.65, dps: 1.43, strokeCount: 35, breathCount: 13 },
-  { name: "Lap 3", lapTime: 37.22, dps: 1.39, strokeCount: 36, breathCount: 13 },
+  {
+    name: "Lap 1",
+    lapTime: 36.11,
+    dps: 1.47,
+    strokeCount: 34,
+    breathCount: 12,
+  },
+  {
+    name: "Lap 2",
+    lapTime: 36.65,
+    dps: 1.43,
+    strokeCount: 35,
+    breathCount: 13,
+  },
+  {
+    name: "Lap 3",
+    lapTime: 37.22,
+    dps: 1.39,
+    strokeCount: 36,
+    breathCount: 13,
+  },
   { name: "Lap 4", lapTime: 37.8, dps: 1.35, strokeCount: 37, breathCount: 14 },
 ];
 
@@ -22,10 +41,12 @@ const DataGraph = () => {
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={chartData}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
+        <XAxis dataKey="name">
+          <Label value="Laps" offset={-5} position="insideBottom" />
+        </XAxis>
         <YAxis />
         <Tooltip />
-
+        <Legend verticalAlign="top" height={36} />
         <Line
           type="monotone"
           dataKey="lapTime"

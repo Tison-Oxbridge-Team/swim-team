@@ -8,6 +8,7 @@ import {
   Tooltip,
   ResponsiveContainer,
   Label,
+  Legend
 } from "recharts";
 
 
@@ -45,11 +46,11 @@ const map = {
 }
 
 const legend = {
-  lapTime: "Lap Time",
-  strokeCount: "Stroke Count",
-  breathCount: "Breath Count",
-  dps: "DPS",
-}
+  lapTime: "Time (seconds)",
+  strokeCount: "Strokes",
+  breathCount: "Breaths",
+  dps: "Distance per Stroke (meters)",
+};
 
 
 
@@ -70,6 +71,7 @@ const DataGraph = ({ attribute }) => {
           />
         </YAxis>
         <Tooltip />
+        <Legend verticalAlign="top" height={36} />
         <Line type="monotone" dataKey="Victor" stroke="#1f77b4" strokeWidth={3} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="Chloe" stroke="#2ca02c" strokeWidth={6} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="James" stroke="#000" strokeWidth={3} dot={{ r: 5 }} />
