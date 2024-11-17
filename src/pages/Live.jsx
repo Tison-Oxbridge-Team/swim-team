@@ -16,7 +16,7 @@ const SwimDashboard = () => {
       diffLose: "-",
       diffTarget: "+0.22",
       overallScore: "95",
-      delay: 5000 // 5 seconds
+      delay: 5000 
     },
     {
       name: "Chloe",
@@ -29,7 +29,7 @@ const SwimDashboard = () => {
       diffLose: "+2.24",
       diffTarget: "+2.46",
       overallScore: "88",
-      delay: 13000 // 13 seconds
+      delay: 13000 
     },
     {
       name: "James",
@@ -42,7 +42,7 @@ const SwimDashboard = () => {
       diffLose: "+4.01",
       diffTarget: "+4.23",
       overallScore: "82",
-      delay: 18000 // 18 seconds
+      delay: 18000 
     },
     {
       name: "Krystle",
@@ -55,7 +55,7 @@ const SwimDashboard = () => {
       diffLose: "+6.46",
       diffTarget: "+6.68",
       overallScore: "75",
-      delay: 22000 // 22 seconds
+      delay: 22000
     }
   ];
 
