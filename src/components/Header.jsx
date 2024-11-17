@@ -48,7 +48,7 @@ const Header = () => {
             alt="Avatar"
             className="w-10 h-10 rounded-full"
           />
-          <span className="text-white text-lg font-semibold">John Doe</span>
+          <span className="text-white text-lg font-semibold">Chloe</span>
         </div>
       </div>
     </header>
