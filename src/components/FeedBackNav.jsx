@@ -1,46 +1,58 @@
-import  { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function FeedBackNav() {
-  const [activeItem, setActiveItem] = useState("dashboard");
-
-  const navItems = [
-    { id: "dashboard", label: "Live Dashboard" },
-    { id: "coaching", label: "Live Coaching" },
-    { id: "analysis", label: "Post Session Analysis" },
-  ];
-
+const Header = () => {
   return (
-    <div className="p-4 text-white flex flex-row justify-between">
-      <div className="flex flex-row justify-between">
-        <h1 className="text-xl font-bold mx-6">AI4Swim</h1>
-        <nav className="flex gap-4">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => setActiveItem(item.id)}
-              className={`text-lg text-white p-2 ${
-                activeItem === item.id
-                  ? "font-bold underline text-white"
-                  : "text-gray-700"
-              } hover:text-white focus:outline-none`}
-              style={{
-                background: "rgba(255, 255, 255, 0.3)", 
-              }}
-            >
-              {item.label}
-            </button>
-          ))}
+    <header>
+      <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16">
+        <nav className="flex flex-grow justify-start">
+          <ul className="flex space-x-8">
+            <li>
+              <Link
+                to="/"
+                className="text-white hover:text-blue-300 text-lg font-bold"
+              >
+                AI4Swim
+              </Link>
+            </li>
+            <li className="opacity-60">
+              <Link
+                to="/data"
+                className="text-white hover:text-blue-300 text-lg"
+              >
+                Live Dashboard
+              </Link>
+            </li>
+            <li className="relative">
+              <Link
+                to="/data"
+                className="text-white hover:text-blue-300 text-lg font-semibold"
+              >
+                Live Coaching
+              </Link>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
+            </li>
+            <li className="opacity-60">
+              <Link
+                to="/data"
+                className="text-white hover:text-blue-300 text-lg"
+              >
+                Post Session Analysis
+              </Link>
+            </li>
+          </ul>
         </nav>
-      </div>
 
-      <div className="flex items-center gap-3">
-        <img
-          src="https://via.placeholder.com/40" 
-          alt="User Avatar"
-          className="w-10 h-10 rounded-full"
-        />
-        <h2>Chloe</h2>
+        <div className="flex items-center space-x-4">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&s"
+            alt="Avatar"
+            className="w-10 h-10 rounded-full"
+          />
+          <span className="text-white text-lg font-semibold">John Doe</span>
+        </div>
       </div>
-    </div>
+    </header>
   );
-}
+};
+
+export default Header;
