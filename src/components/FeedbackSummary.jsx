@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import FeedBackCard from "./FeedBackCard";
 
 // eslint-disable-next-line react/prop-types
@@ -10,7 +10,7 @@ const FeedbackSummary = ({ feedbackCategories = [] }) => {
   };
 
   return (
-    <div className="space-y-6 p-6">
+    <div className="mt-36 space-y-6 p-6"> {/* Increase margin-top from mt-28 to mt-36 */}
       {["First Phase", "Second Phase"].map((phaseLabel, idx) => {
         const phases =
           idx === 0
@@ -26,8 +26,8 @@ const FeedbackSummary = ({ feedbackCategories = [] }) => {
               );
 
         return (
-          <div key={phaseLabel} className="p-6 rounded-lg">
-            <div className="flex justify-between items-center p-5 shadow-md">
+          <div key={phaseLabel} className="rounded-lg">
+            <div className="flex justify-between items-center p-2 shadow-md">
               <h2 className="text-xl text-gray-700">{phaseLabel}</h2>
               <button
                 className="text-3xl text-gray-600"
@@ -44,13 +44,16 @@ const FeedbackSummary = ({ feedbackCategories = [] }) => {
                     <div
                       key={index}
                       className="flex-1 bg-gray-50 shadow-md p-4 rounded-lg"
-                    > <div className="flex justify-between flex-row">
-                       <h3 className="text-xl font-bold text-center text-gray-700 mb-4">
-                        {phaseData.phase}   
-                      </h3>
-                      <h3 className="text-xl   text-gray-700 mb-4">Time: {phaseData.timeDuration || "N/A"}</h3>
-                    </div>
-                     
+                    >
+                      <div className="flex justify-between flex-row">
+                        <h3 className="text-xl font-bold text-center text-gray-700 mb-4">
+                          {phaseData.phase}
+                        </h3>
+                        <h3 className="text-xl text-gray-700 mb-4">
+                          Time: {phaseData.timeDuration || "N/A"}
+                        </h3>
+                      </div>
+
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         {phaseData.feedbacks.map(
                           (feedbackCategory, feedbackIndex) => (
