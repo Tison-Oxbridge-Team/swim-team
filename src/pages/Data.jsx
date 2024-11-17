@@ -3,7 +3,6 @@ import DataGraph from "../components/DataGraph";
 
 const Data = () => {
   const [compareWith, setCompareWith] = useState("Compare With Yourself");
-  
 
   const handleCompareWith = (e) => {
     setCompareWith(e.target.value);
@@ -71,48 +70,49 @@ const Data = () => {
             </div>
           </div>
         )}
-   
 
-      {compareWith !== "Pose Analysis" && (
-        <div className="flex flex-wrap md:flex-nowrap justify-between items-center space-y-4 md:space-y-0">
-          <div className="flex items-center space-x-4 pr-5">
-            <label htmlFor="target" className="font-semibold text-gray-700">
-              Target:
-            </label>
-            {compareWith === "Compare With Yourself" ? (
+        {compareWith !== "Pose Analysis" && (
+          <div className="flex flex-wrap md:flex-nowrap justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-4 pr-5">
+              <label htmlFor="target" className="font-semibold text-gray-700">
+                Target:
+              </label>
+              {compareWith === "Compare With Yourself" ? (
+                <select
+                  id="target"
+                  className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                >
+                  <option value="previousAverage">Previous Average</option>
+
+                </select>
+              ) : (
+                <select
+                  id="target"
+                  className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                >
+                  <option value="previousAverage">Classmates</option>
+                </select>
+              )}
+            </div>
+            <div className="flex items-center space-x-4">
+              <label
+                htmlFor="attribute"
+                className="font-semibold text-gray-700"
+              >
+                Attribute:
+              </label>
               <select
-                id="target"
+                id="attribute"
                 className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
               >
-                <option value="previousAverage">Previous Average</option>
-                <option value="personalBest">Personal Best</option>
-                <option value="goal">Goal</option>
+                <option value="lapTime">Lap Time</option>
+                <option value="strokeRate">Stroke Rate</option>
+                <option value="distance">Distance</option>
               </select>
-            ) : (
-              <select
-                id="target"
-                className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              >
-                <option value="previousAverage">Classmates</option>
-              </select>
-            )}
+            </div>
           </div>
-          <div className="flex items-center space-x-4">
-            <label htmlFor="attribute" className="font-semibold text-gray-700">
-              Attribute:
-            </label>
-            <select
-              id="attribute"
-              className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            >
-              <option value="lapTime">Lap Time</option>
-              <option value="strokeRate">Stroke Rate</option>
-              <option value="distance">Distance</option>
-            </select>
-          </div>
-        </div>
-      )}
-         </div>
+        )}
+      </div>
 
       <div className="bg-white shadow-md rounded-lg p-6">
         <div className="flex flex-col items-center justify-center border border-gray-300 rounded-md">
