@@ -8,7 +8,7 @@ const Header = () => {
           <ul className="flex space-x-8">
             <li>
               <Link
-                to="/"
+                // to="/"
                 className="text-white hover:text-blue-300 text-lg font-bold"
               >
                 AI4Swim
@@ -22,23 +22,25 @@ const Header = () => {
                 Live Dashboard
               </Link>
             </li>
+            <li className="opacity-60">
+              <Link
+                to="/coaching"
+                className="text-white hover:text-blue-300 text-lg"
+              >
+                Live Coaching
+              </Link>
+            </li>
+            
             <li className="relative">
               <Link
                 to="/data"
                 className="text-white hover:text-blue-300 text-lg font-semibold"
               >
-                Live Coaching
+                Post Session Analysis
               </Link>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
             </li>
-            <li className="opacity-60">
-              <Link
-                to="/data"
-                className="text-white hover:text-blue-300 text-lg"
-              >
-                Post Session Analysis
-              </Link>
-            </li>
+            
           </ul>
         </nav>
 

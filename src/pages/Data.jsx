@@ -2,6 +2,7 @@ import { useState } from "react";
 import CWY from "../components/CWYGraph";
 import CWO from "../components/CWOGraph";
 import CWW from "../components/CWWGraph";
+import Header from "../components/Header";
 
 const Data = () => {
   const [compareWith, setCompareWith] = useState("Compare With Yourself");
@@ -12,7 +13,7 @@ const Data = () => {
     const value = e.target.value;
     setCompareWith(value);
 
-    // Automatically update the target based on the selected option
+    
     if (value === "Compare With Others") {
       setTarget("Classmates");
     } else if (value === "Compare With Yourself") {
@@ -21,6 +22,8 @@ const Data = () => {
   };
 
   return (
+    <>
+    <Header />
     <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-gray-700 text-sm">
         <div>
@@ -68,7 +71,19 @@ const Data = () => {
       <div className="text-center"></div>
 
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-bold">4X50 Freestyle @ 1:00</h2>
+      <h2 className="text-xl font-bold">
+  4X50 Freestyle @ 1:00 &nbsp;&nbsp; 
+  <span>
+    Chloe: &nbsp;&nbsp;&nbsp;
+    <span 
+      className="bg-green-600 w-10 h-1 inline-block ml-2"
+      title="Chloe: Green"
+    ></span>
+  </span>
+  
+</h2>
+
+        
         {compareWith === "Pose Analysis" && (
           <div className="flex space-x-6 text-sm text-gray-700">
             <div>
@@ -155,6 +170,7 @@ const Data = () => {
         </div>
       ) : null}
     </div>
+    </>
   );
 };
 
