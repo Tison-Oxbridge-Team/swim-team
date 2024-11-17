@@ -143,7 +143,7 @@ const Data = () => {
       {compareWith === "Compare With Others" && target === "WorldWide" ? (
         <div className="bg-white shadow-md rounded-lg p-6">
           <div className="flex flex-col items-center justify-center border border-gray-300 rounded-md">
-            <CWW />
+            <CWW attribute={attribute}/>
           </div>
         </div>
       ) : null}

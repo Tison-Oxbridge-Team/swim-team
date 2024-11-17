@@ -9,27 +9,55 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-    { name: "Lap 1", line1: 100, line2: 75, line3: 5, line4: 0 },
-    { name: "Lap 2", line1: 90, line2: 70, line3: 5, line4: 70 },
-    { name: "Lap 3", line1: 80, line2: 65, line3: 10, line4: 90 },
-    { name: "Lap 4", line1: 0, line2: 60, line3: 65, line4: 70 },
-    { name: "Lap 5", line1: 90, line2: 50, line3: 95, line4: 0 },
-  ];
+const lapTime = [
+  { name: "Lap 1", Group1: 37.04, Group2: 33.81, Group3: 38.41, Chloe: 36.11 },
+  { name: "Lap 2", Group1: 37.64, Group2: 34.35, Group3: 38.97, Chloe: 36.65 },
+  { name: "Lap 3", Group1: 38.26, Group2: 34.89, Group3: 39.50, Chloe: 37.22 },
+  { name: "Lap 4", Group1: 38.88, Group2: 35.39, Group3: 40.03, Chloe: 37.80 },
+];
 
-const DataGraph = () => {
+const strokeCount = [
+  { name: "Lap 1", Group1: 35.25, Group2: 31.5, Group3: 35.5, Chloe: 34 },
+  { name: "Lap 2", Group1: 36, Group2: 32.75, Group3: 36.5, Chloe: 35 },
+  { name: "Lap 3", Group1: 36.75, Group2: 33.75, Group3: 37.5, Chloe: 36 },
+  { name: "Lap 4", Group1: 37.5, Group2: 34.75, Group3: 38.5, Chloe: 37 },
+];
+
+const breathCount = [
+  { name: "Lap 1", Group1: 13, Group2: 11, Group3: 13.5, Chloe: 12 },
+  { name: "Lap 2", Group1: 13.5, Group2: 11.75, Group3: 14, Chloe: 13 },
+  { name: "Lap 3", Group1: 14, Group2: 12, Group3: 14.5, Chloe: 13 },
+  { name: "Lap 4", Group1: 14.5, Group2: 12.5, Group3: 15, Chloe: 14 },
+];
+
+const dps = [
+  { name: "Lap 1", Group1: 1.41, Group2: 1.62, Group3: 1.39, Chloe: 1.47 },
+  { name: "Lap 2", Group1: 1.37, Group2: 1.56, Group3: 1.35, Chloe: 1.43 },
+  { name: "Lap 3", Group1: 1.33, Group2: 1.50, Group3: 1.31, Chloe: 1.39 },
+  { name: "Lap 4", Group1: 1.29, Group2: 1.45, Group3: 1.27, Chloe: 1.35 },
+];
+
+const map = {
+  lapTime: lapTime,
+  strokeCount: strokeCount,
+  breathCount: breathCount,
+  dps: dps,
+};
+
+
+const DataGraph = ({attribute}) => {
   return (
     <ResponsiveContainer width="100%" height={400}>
-      <LineChart data={data}>
+      <LineChart data={map[attribute]}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" />
         <YAxis />
         <Tooltip />
         
-        <Line type="monotone" dataKey="line1" stroke="#1f77b4" strokeWidth={3} dot={{ r: 5 }} />
-        <Line type="monotone" dataKey="line2" stroke="#2ca02c" strokeWidth={3} dot={{ r: 5 }} />
-        <Line type="monotone" dataKey="line3" stroke="#FFFF00" strokeWidth={3} dot={{ r: 5 }} />
-        <Line type="monotone" dataKey="line4" stroke="#d62728" strokeWidth={3} dot={{ r: 5 }} />
+        <Line type="monotone" dataKey="Group1" stroke="#1f77b4" strokeWidth={3} dot={{ r: 5 }} />
+        <Line type="monotone" dataKey="Group2" stroke="#2ca02c" strokeWidth={3} dot={{ r: 5 }} />
+        <Line type="monotone" dataKey="Group3" stroke="#000" strokeWidth={3} dot={{ r: 5 }} />
+        <Line type="monotone" dataKey="Chloe" stroke="#d62728" strokeWidth={3} dot={{ r: 5 }} />
       </LineChart>
     </ResponsiveContainer>
   );
