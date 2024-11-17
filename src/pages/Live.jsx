@@ -68,7 +68,7 @@ const SwimDashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col">
       <header>
         <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16">
           <nav className="flex flex-grow justify-start">
@@ -116,7 +116,7 @@ const SwimDashboard = () => {
           </div>
         </div>
       </header>
-      <div className="p-4 bg-gray-100">
+      <div className="flex-1 p-4 bg-gray-100">
         <div className="grid grid-cols-5 gap-4 bg-gray-100 text-gray-700 p-3 mb-4 text-sm">
           <div><span className="font-semibold">Date:</span> 2024-08-30</div>
           <div><span className="font-semibold">Time:</span> 19:58-46</div>
