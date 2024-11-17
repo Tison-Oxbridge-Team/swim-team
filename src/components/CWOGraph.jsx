@@ -55,7 +55,7 @@ const DataGraph = ({attribute}) => {
         <Tooltip />
 
         <Line type="monotone" dataKey="Victor" stroke="#1f77b4" strokeWidth={3} dot={{ r: 5 }} />
-        <Line type="monotone" dataKey="Chloe" stroke="#2ca02c" strokeWidth={3} dot={{ r: 5 }} />
+        <Line type="monotone" dataKey="Chloe" stroke="#2ca02c" strokeWidth={6} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="James" stroke="#000" strokeWidth={3} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="Krystle" stroke="#d62728" strokeWidth={3} dot={{ r: 5 }} />
       </LineChart>

@@ -2,47 +2,44 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 w-full bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16 z-20">
-      <nav className="flex flex-grow justify-start">
-        <ul className="flex space-x-8">
-          <li>
-            <Link
-              to="/"
-              className="text-white hover:text-blue-300 text-lg font-bold"
-            >
-              AI4Swim
-            </Link>
-          </li>
-          <li className="opacity-60">
-            <Link
-              to="/data"
-              className="text-white hover:text-blue-300 text-lg"
-            >
-              Live Dashboard
-            </Link>
-          </li>
-          <li className="relative">
-            <Link
-              to="/coaching"
-              className="text-white hover:text-blue-300 text-lg font-semibold"
-            >
-              Live Coaching
-            </Link>
-            <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
-          </li>
-          <li className="opacity-60">
-            <Link
-              to="/data"
-              className="text-white hover:text-blue-300 text-lg"
-            >
-              Post Session Analysis
-            </Link>
-          </li>
-          <li className="opacity-60">
-            
-          </li>
-        </ul>
-      </nav>
+    <header>
+      <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16">
+        <nav className="flex flex-grow justify-start">
+          <ul className="flex space-x-8">
+            <li>
+              <Link className="text-white hover:text-blue-300 text-lg font-bold">
+                AI4Swim
+              </Link>
+            </li>
+            <li className="opacity-60">
+              <Link
+                to="/live"
+                className="text-white hover:text-blue-300 text-lg"
+              >
+                Live Dashboard
+              </Link>
+            </li>
+            <li className="opacity-60">
+              <Link
+                to="/coaching"
+                className="text-white hover:text-blue-300 text-lg"
+              >
+                Live Coaching
+              </Link>
+            </li>
+
+            <li className="relative">
+              <Link
+                to="/data"
+                className="text-white hover:text-blue-300 text-lg font-semibold"
+              >
+                Post Session Analysis
+              </Link>
+              <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
+            </li>
+          </ul>
+        </nav>
+
 
       <div className="flex items-center space-x-4">
         <img
