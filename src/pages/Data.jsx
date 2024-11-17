@@ -1,11 +1,23 @@
 import { useState } from "react";
-import DataGraph from "../components/DataGraph";
+import CWY from "../components/CWYGraph";
+import CWO from "../components/CWOGraph";
+import CWW from "../components/CWWGraph";
 
 const Data = () => {
   const [compareWith, setCompareWith] = useState("Compare With Yourself");
+  const [target, setTarget] = useState("previousAverage");
+  const [attribute, setAttribute] = useState("lapTime"); // Step 1: Add state for attribute
 
   const handleCompareWith = (e) => {
-    setCompareWith(e.target.value);
+    const value = e.target.value;
+    setCompareWith(value);
+
+    // Automatically update the target based on the selected option
+    if (value === "Compare With Others") {
+      setTarget("Classmates");
+    } else if (value === "Compare With Yourself") {
+      setTarget("previousAverage");
+    }
   };
 
   return (
@@ -24,7 +36,7 @@ const Data = () => {
           <span className="font-semibold">Club:</span> FMS #2
         </div>
         <div>
-          <span className="font-semibold">CourseID:</span>20240830FMS#2M028
+          <span className="font-semibold">CourseID:</span> 20240830FMS#2M028
         </div>
       </div>
 
@@ -81,16 +93,20 @@ const Data = () => {
                 <select
                   id="target"
                   className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  value={target}
+                  onChange={(e) => setTarget(e.target.value)}
                 >
                   <option value="previousAverage">Previous Average</option>
-
                 </select>
               ) : (
                 <select
                   id="target"
                   className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  value={target}
+                  onChange={(e) => setTarget(e.target.value)}
                 >
-                  <option value="previousAverage">Classmates</option>
+                  <option value="Classmates">Classmates</option>
+                  <option value="WorldWide">WorldWide</option>
                 </select>
               )}
             </div>
@@ -104,21 +120,40 @@ const Data = () => {
               <select
                 id="attribute"
                 className="border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                value={attribute} 
+                onChange={(e) => setAttribute(e.target.value)} 
               >
                 <option value="lapTime">Lap Time</option>
-                <option value="strokeRate">Stroke Rate</option>
-                <option value="distance">Distance</option>
+                <option value="strokeCount">Stroke Count</option>
+                <option value="breathCount">Breath Count</option>
+                <option value="dps">DPS</option> 
               </select>
             </div>
           </div>
         )}
       </div>
 
-      <div className="bg-white shadow-md rounded-lg p-6">
-        <div className="flex flex-col items-center justify-center border border-gray-300 rounded-md">
-          <DataGraph />
+      {compareWith === "Compare With Yourself" ? (
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="flex flex-col items-center justify-center border border-gray-300 rounded-md">
+            <CWY />
+          </div>
         </div>
-      </div>
+      ) : null}
+      {compareWith === "Compare With Others" && target === "WorldWide" ? (
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="flex flex-col items-center justify-center border border-gray-300 rounded-md">
+            <CWW attribute={attribute}/>
+          </div>
+        </div>
+      ) : null}
+      {compareWith === "Compare With Others" && target === "Classmates" ? (
+        <div className="bg-white shadow-md rounded-lg p-6">
+          <div className="flex flex-col items-center justify-center border border-gray-300 rounded-md">
+            <CWO attribute={attribute} /> 
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
