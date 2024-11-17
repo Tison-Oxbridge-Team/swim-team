@@ -35,7 +35,9 @@ def generate_analysis(swimmer_data):
             "spirit_guidance": "Mental feedback",
             "technique_guidance": "Technical advice",
             "speed_guidance": "Pace recommendations",
-            "metrics_analysis": "Metrics evaluation"
+            "metrics_analysis": "Metrics evaluation",
+            "lap_time_guidance": "Specific guidance about lap times",
+            "other_guidance": "Additional technical observations"
         }},
         "first_period_recovery": {{
             "start_time": "5:00",
@@ -44,7 +46,9 @@ def generate_analysis(swimmer_data):
             "spirit_guidance": "Mental guidance",
             "technique_guidance": "Recovery recommendations",
             "energy_management": "Energy strategies",
-            "breathing_analysis": "Breathing patterns"
+            "breathing_analysis": "Breathing patterns",
+            "lap_time_guidance": "Recovery pace guidance",
+            "other_guidance": "Additional recovery advice"
         }},
         "second_form_freestyle": {{
             "start_time": "10:00",
@@ -53,7 +57,9 @@ def generate_analysis(swimmer_data):
             "spirit_guidance": "Mental feedback",
             "technique_guidance": "Technical advice",
             "speed_guidance": "Pace recommendations",
-            "metrics_analysis": "Metrics evaluation"
+            "metrics_analysis": "Metrics evaluation",
+            "lap_time_guidance": "Specific guidance about lap times",
+            "other_guidance": "Additional technical observations"
         }},
         "second_period_recovery": {{
             "start_time": "15:00",
@@ -62,16 +68,20 @@ def generate_analysis(swimmer_data):
             "spirit_guidance": "Mental guidance",
             "technique_guidance": "Recovery recommendations",
             "energy_management": "Energy strategies",
-            "breathing_analysis": "Breathing patterns"
+            "breathing_analysis": "Breathing patterns",
+            "lap_time_guidance": "Recovery pace guidance",
+            "other_guidance": "Additional recovery advice"
         }}
     }}
+
+    Ensure all fields are filled with meaningful, specific guidance based on the provided metrics. Pay special attention to lap_time_guidance and other_guidance for all periods, particularly the recovery periods.
     """
 
     try:
         response = client.chat.completions.create(
             model="gpt-4",
             messages=[
-                {"role": "system", "content": "You are a professional swim coach providing structured analysis for freestyle swimming and recovery periods. Ensure all responses are in valid JSON format."},
+                {"role": "system", "content": "You are a professional swim coach providing structured analysis for freestyle swimming and recovery periods. Ensure all responses are in valid JSON format with complete guidance for all fields, including lap times and other observations."},
                 {"role": "user", "content": comprehensive_feedback_prompt}
             ]
         )
