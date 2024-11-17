@@ -6,6 +6,7 @@ import { useState, useEffect, useMemo } from "react";
 import { ClipLoader } from "react-spinners";
 
 import analysisResponse from "../../analysisResponse.json"
+import Header from "../components/FeedBackNav";
 
 const Coaching = () => {
   
@@ -145,7 +146,10 @@ const Coaching = () => {
   }, [feedbackData]);
 
   return (
-    <div className="p-0">
+    <div className="p-0 bg-gray-100 min-h-screen">
+      <div>
+      <Header />
+      </div>
       <div>
         <hr />
         <DetailsGrid

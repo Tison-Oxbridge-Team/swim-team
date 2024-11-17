@@ -76,15 +76,6 @@ const Data = () => {
         <div className="flex justify-between items-center">
           <h2 className="text-xl font-bold">
             4X50 Freestyle @ 1:00 &nbsp;&nbsp;
-            {compareWith === "Compare With Others" ? (
-              <span>
-                Chloe: &nbsp;&nbsp;&nbsp;
-                <span
-                  className="bg-green-600 w-10 h-1 inline-block ml-2"
-                  title="Chloe: Green"
-                ></span>
-              </span>
-            ) : null}
           </h2>
 
           {compareWith === "Pose Analysis" && (

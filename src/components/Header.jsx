@@ -49,6 +49,7 @@ const Header = () => {
         />
         <span className="text-white text-lg font-semibold">Chloe</span>
       </div>
+    </div>
     </header>
   );
 };
