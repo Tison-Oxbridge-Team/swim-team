@@ -7,16 +7,13 @@ const Header = () => {
         <nav className="flex flex-grow justify-start">
           <ul className="flex space-x-8">
             <li>
-              <Link
-                // to="/"
-                className="text-white hover:text-blue-300 text-lg font-bold"
-              >
+              <Link className="text-white hover:text-blue-300 text-lg font-bold">
                 AI4Swim
               </Link>
             </li>
             <li className="opacity-60">
               <Link
-                to="/data"
+                to="/live"
                 className="text-white hover:text-blue-300 text-lg"
               >
                 Live Dashboard
@@ -30,7 +27,7 @@ const Header = () => {
                 Live Coaching
               </Link>
             </li>
-            
+
             <li className="relative">
               <Link
                 to="/data"
@@ -40,7 +37,6 @@ const Header = () => {
               </Link>
               <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
             </li>
-            
           </ul>
         </nav>
 

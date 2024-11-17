@@ -8,7 +8,7 @@ const Header = () => {
           <ul className="flex space-x-8">
             <li>
               <Link
-                to="/"
+
                 className="text-white hover:text-blue-300 text-lg font-bold"
               >
                 AI4Swim
@@ -16,7 +16,7 @@ const Header = () => {
             </li>
             <li className="opacity-60">
               <Link
-                to="/data"
+                to="/live"
                 className="text-white hover:text-blue-300 text-lg"
               >
                 Live Dashboard
