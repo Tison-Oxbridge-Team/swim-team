@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import CWY from "../components/CWYGraph";
 import CWO from "../components/CWOGraph";
 import CWW from "../components/CWWGraph";
@@ -7,7 +7,7 @@ import Header from "../components/Header";
 const Data = () => {
   const [compareWith, setCompareWith] = useState("Compare With Yourself");
   const [target, setTarget] = useState("previousAverage");
-  const [attribute, setAttribute] = useState("lapTime"); // Step 1: Add state for attribute
+  const [attribute, setAttribute] = useState("lapTime");
 
   const handleCompareWith = (e) => {
     const value = e.target.value;
@@ -21,12 +21,14 @@ const Data = () => {
   };
 
   return (
+
     <>
       <Header />
       <div className="p-8 space-y-6 bg-gray-100 min-h-screen">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 text-gray-700 text-sm">
           <div>
             <span className="font-semibold">Date:</span> 2024-08-30
+
           </div>
           <div>
             <span className="font-semibold">Time:</span> 19:58:46

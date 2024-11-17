@@ -40,14 +40,14 @@ const Header = () => {
           </ul>
         </nav>
 
-        <div className="flex items-center space-x-4">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&s"
-            alt="Avatar"
-            className="w-10 h-10 rounded-full"
-          />
-          <span className="text-white text-lg font-semibold">Chloe</span>
-        </div>
+
+      <div className="flex items-center space-x-4">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKaiKiPcLJj7ufrj6M2KaPwyCT4lDSFA5oog&s"
+          alt="Avatar"
+          className="w-10 h-10 rounded-full"
+        />
+        <span className="text-white text-lg font-semibold">Chloe</span>
       </div>
     </header>
   );

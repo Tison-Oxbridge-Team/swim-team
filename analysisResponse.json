@@ -1,0 +1,60 @@
+{
+    "data": {
+      "analysis": {
+        "first_form_freestyle": {
+          "end_time": "5:00",
+          "lap_time_guidance": "Aim to reduce your lap times to under 33.0 seconds through improved stroke efficiency.",
+          "metrics_analysis": "There's a gradual increase in lap times and stroke counts. Although DPS increased, the increase in lap times cannot be compensated.",
+          "observations": "Chloe's first form depicts an efficient stroke technique which is reflected in the steadily increasing DPS. However, her lap time increased suggesting a struggle to maintain speed.",
+          "other_guidance": "Reduce the breath count to maintain rhythm and stamina. More breaths break rhythm and cost valuable splits.",
+          "speed_guidance": "Maintain consistent speed across each lap for better timing.",
+          "spirit_guidance": "Chloe, stay confident and continue your focus on technique even when there are challenges.",
+          "start_time": "0:00",
+          "technique_guidance": "You need to maintain your stroke length especially in the second half to keep up your DPS. Try to avoid shortening your stroke to sustain speed."
+        },
+        "first_period_recovery": {
+          "breathing_analysis": "Breath count increased which is good but strive for deeper, controlled breaths.",
+          "end_time": "10:00",
+          "energy_management": "Keeping a steady and comfortable pace will help conserve energy for the next set of laps.",
+          "lap_time_guidance": "Ignore lap times during recovery. The focus should be on catching breath and relaxing muscles.",
+          "observations": "Recovery period showed gradual relaxation and controlled breathing to refuel the energy.",
+          "other_guidance": "Work on mental imagery techniques during recovery. Visualizing efficient strokes can impact real performance.",
+          "spirit_guidance": "This is your time to recalibrate. Relax and focus on your breathing.",
+          "start_time": "5:00",
+          "technique_guidance": "Practice bilateral breathing during recovery to enhance oxygen intake."
+        },
+        "second_form_freestyle": {
+          "end_time": "15:00",
+          "lap_time_guidance": "Strive to maintain consistent lap times. Slight variations might not seem much individually but can add up quickly.",
+          "metrics_analysis": "Improved consistency, though slight, is a positive indication of effective recovery and better stroke control.",
+          "observations": "A slight improvement in lap time, breath and stroke counts suggest a positive recovery stage effect.",
+          "other_guidance": "Turn your head less while breathing to avoid reducing your speed and causing body misalignment.",
+          "speed_guidance": "Strive for an even, steady speed to prevent burnout and maintain performance.",
+          "spirit_guidance": "Chloe, keep up the determination. Balance your mind to control the body more effectively.",
+          "start_time": "10:00",
+          "technique_guidance": "A consistent stroke technique is crucial to maintain efficient DPS even in the last stretch."
+        },
+        "second_period_recovery": {
+          "breathing_analysis": "Focused, slow breaths can help lower heart rate and prepare effectively.",
+          "end_time": "20:00",
+          "energy_management": "Controlled, deep breathing will help recoup the oxygen debt. Hydration is equally important now.",
+          "lap_time_guidance": "No focus on lap timings during this period. The aim is to restore, refuel and recover.",
+          "observations": "This is the final recovery period. The focus should be completely on restoring energy and preparing for the next session.",
+          "other_guidance": "Active recovery with gentle movements can help prevent muscle stiffness and prepare you better for the next training session.",
+          "spirit_guidance": "Use this time to mentally prepare for the next session. Clear your mind and stay focused.",
+          "start_time": "15:00",
+          "technique_guidance": "Try to float as much as possible, utilizing the buoyancy to rest muscles."
+        }
+      },
+      "session_info": {
+        "club_name": null,
+        "event_date": null,
+        "group_number": null,
+        "session_type": "freestyle_and_recovery"
+      },
+      "swimmer_name": "Chloe",
+      "timestamp": "2024-11-17T13:29:53.438565"
+    },
+    "status": "success"
+  }
+  
