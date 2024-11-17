@@ -68,7 +68,7 @@ const SwimDashboard = () => {
   }, []);
 
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <header>
         <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16">
           <nav className="flex flex-grow justify-start">
@@ -123,24 +123,21 @@ const SwimDashboard = () => {
           <div><span className="font-semibold">Location:</span> CN, FJ, Xiamen</div>
           <div><span className="font-semibold">Club:</span> FMS #2</div>
           <div><span className="font-semibold">CourseID:</span> 20240830FMS#2M028</div>
+          
         </div>
+        <div className="grid grid-cols-5 gap-4 bg-gray-100 text-gray-700 pl-3 mb-4 text-sm">
+          <div><span className="font-semibold">CourseID:</span> M028</div>
+          <div><span className="font-semibold">Coach: </span>Phelps</div>
+          <div><span className="font-semibold">Current Plan:</span> 4×50 Freestyle @ 1:00</div>
+          <div><span className="font-semibold">Next Plan: </span>4×100 Freestyle @ 1:40</div>
+          
+        </div>
+        
         <br />
         <br />
 
         <div className="grid grid-cols-5 gap-4 p-5 ml-4">
           <div className="col-span-2 space-y-4">
-            <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] text-white rounded-lg shadow-lg">
-              <div className="p-4">
-                <div className="mb-4">
-                  <div>CourseID: M028</div>
-                  <div>Coach: Phelps</div>
-                </div>
-                <div className="space-y-2">
-                  <div>Current Plan: 4×50 Freestyle @ 1:00</div>
-                  <div>Next Plan: 4×100 Freestyle @ 1:40</div>
-                </div>
-              </div>
-            </div>
 
             <div className="bg-gray-300 aspect-video flex items-center justify-center rounded-lg">
               <span className="text-gray-600 text-lg">Video</span>
@@ -213,7 +210,7 @@ const SwimDashboard = () => {
           }
         `}
       </style>
-    </>
+    </div>
   );
 };
 

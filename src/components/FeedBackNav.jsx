@@ -2,13 +2,12 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
+    <header className="fixed top-0 left-0 w-full z-50">
       <div className="bg-gradient-to-r from-[#002F6C] to-[#29ABE2] h-16 flex justify-between items-center p-6 pl-16">
         <nav className="flex flex-grow justify-start">
           <ul className="flex space-x-8">
             <li>
               <Link
-
                 className="text-white hover:text-blue-300 text-lg font-bold"
               >
                 AI4Swim
