@@ -117,12 +117,12 @@ const SwimDashboard = () => {
         </div>
       </header>
       <div className="p-4 bg-gray-100">
-        <div className="grid grid-cols-5 gap-4 bg-gray-100 text-gray-700 p-3 mb-4">
-          <div>Date: 2024-08-30</div>
-          <div>Time: 19:58-46</div>
-          <div>Location: CN, FJ, Xiamen</div>
-          <div>Club: FMS #2</div>
-          <div>CourseID: 20240830FMS#2M028</div>
+        <div className="grid grid-cols-5 gap-4 bg-gray-100 text-gray-700 p-3 mb-4 text-sm">
+          <div><span className="font-semibold">Date:</span> 2024-08-30</div>
+          <div><span className="font-semibold">Time:</span> 19:58-46</div>
+          <div><span className="font-semibold">Location:</span> CN, FJ, Xiamen</div>
+          <div><span className="font-semibold">Club:</span> FMS #2</div>
+          <div><span className="font-semibold">CourseID:</span> 20240830FMS#2M028</div>
         </div>
         <br />
         <br />

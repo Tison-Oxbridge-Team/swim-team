@@ -7,6 +7,8 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Legend,
+  Label
 } from "recharts";
 
 const lapTime = [
@@ -45,15 +47,31 @@ const map = {
 };
 
 
-const DataGraph = ({attribute}) => {
+const legend = {
+  lapTime: "Time (seconds)",
+  strokeCount: "Strokes",
+  breathCount: "Breaths",
+  dps: "Distance per Stroke (meters)",
+};
+
+const DataGraph = ({ attribute }) => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={map[attribute]}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis dataKey="name">
+          <Label value="Laps" offset={-5} position="insideBottom" />
+        </XAxis>
+        <YAxis>
+          <Label
+            value={legend[attribute]}
+            angle={-90}
+            position="insideLeft"
+            style={{ textAnchor: "middle" }}
+          />
+        </YAxis>
         <Tooltip />
-        
+        <Legend verticalAlign="top" height={36} />
         <Line type="monotone" dataKey="Group1" stroke="#1f77b4" strokeWidth={3} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="Group2" stroke="#d62728" strokeWidth={3} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="Group3" stroke="#000" strokeWidth={3} dot={{ r: 5 }} />
@@ -64,3 +82,4 @@ const DataGraph = ({attribute}) => {
 };
 
 export default DataGraph;
+

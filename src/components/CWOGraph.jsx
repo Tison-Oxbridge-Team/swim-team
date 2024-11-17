@@ -7,14 +7,16 @@ import {
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
+  Label,
+  Legend
 } from "recharts";
 
 
 const lapTime = [
-  { name: "Lap 1", Victor: 33.87, Chloe: 36.11, James: 37.88, Krystle: 40.33 },
-  { name: "Lap 2", Victor: 34.45, Chloe: 36.65, James: 38.47, Krystle: 40.89 },
-  { name: "Lap 3", Victor: 35.02, Chloe: 37.22, James: 39.21, Krystle: 41.46 },
-  { name: "Lap 4", Victor: 35.76, Chloe: 37.8, James: 39.86, Krystle: 41.97 },
+  { name: "1", Victor: 33.87, Chloe: 36.11, James: 37.88, Krystle: 40.33 },
+  { name: "2", Victor: 34.45, Chloe: 36.65, James: 38.47, Krystle: 40.89 },
+  { name: "3", Victor: 35.02, Chloe: 37.22, James: 39.21, Krystle: 41.46 },
+  { name: "4", Victor: 35.76, Chloe: 37.8, James: 39.86, Krystle: 41.97 },
 ];
 const strokeCount = [
   { name: "Lap 1", Victor: 32, Chloe: 34, James: 36, Krystle: 38 },
@@ -43,17 +45,33 @@ const map = {
   dps: dps,
 }
 
+const legend = {
+  lapTime: "Time (seconds)",
+  strokeCount: "Strokes",
+  breathCount: "Breaths",
+  dps: "Distance per Stroke (meters)",
+};
 
 
-const DataGraph = ({attribute}) => {
+
+const DataGraph = ({ attribute }) => {
   return (
     <ResponsiveContainer width="100%" height={400}>
       <LineChart data={map[attribute]}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis dataKey="name">
+          <Label value="Laps" offset={-5} position="insideBottom" />
+        </XAxis>
+        <YAxis>
+          <Label
+            value={legend[attribute]}
+            angle={-90}
+            position="insideLeft"
+            style={{ textAnchor: "middle" }}
+          />
+        </YAxis>
         <Tooltip />
-
+        <Legend verticalAlign="top" height={36} />
         <Line type="monotone" dataKey="Victor" stroke="#1f77b4" strokeWidth={3} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="Chloe" stroke="#2ca02c" strokeWidth={6} dot={{ r: 5 }} />
         <Line type="monotone" dataKey="James" stroke="#000" strokeWidth={3} dot={{ r: 5 }} />
