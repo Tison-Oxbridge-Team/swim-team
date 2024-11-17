@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const SwimDashboard = () => {
+  const [visibleSwimmers, setVisibleSwimmers] = useState([]);
+  
   const swimmers = [
     {
       name: "Victor",
@@ -13,7 +15,8 @@ const SwimDashboard = () => {
       distanceUnderwater: "6.47",
       diffLose: "-",
       diffTarget: "+0.22",
-      overallScore: "95"
+      overallScore: "95",
+      delay: 5000 // 5 seconds
     },
     {
       name: "Chloe",
@@ -25,7 +28,8 @@ const SwimDashboard = () => {
       distanceUnderwater: "7.18",
       diffLose: "+2.24",
       diffTarget: "+2.46",
-      overallScore: "88"
+      overallScore: "88",
+      delay: 13000 // 13 seconds
     },
     {
       name: "James",
@@ -37,7 +41,8 @@ const SwimDashboard = () => {
       distanceUnderwater: "7.52",
       diffLose: "+4.01",
       diffTarget: "+4.23",
-      overallScore: "82"
+      overallScore: "82",
+      delay: 18000 // 18 seconds
     },
     {
       name: "Krystle",
@@ -49,83 +54,18 @@ const SwimDashboard = () => {
       distanceUnderwater: "8.04",
       diffLose: "+6.46",
       diffTarget: "+6.68",
-      overallScore: "75"
-    },
-    {
-      name: "Victor",
-      lapTime: "33.87",
-      velocity: "1.48",
-      stroke: "32",
-      dps: "1.56",
-      breathe: "11",
-      distanceUnderwater: "6.47",
-      diffLose: "-",
-      diffTarget: "+0.22",
-      overallScore: "95"
-    },
-    {
-      name: "Chloe",
-      lapTime: "36.11",
-      velocity: "1.39",
-      stroke: "34",
-      dps: "1.47",
-      breathe: "12",
-      distanceUnderwater: "7.18",
-      diffLose: "+2.24",
-      diffTarget: "+2.46",
-      overallScore: "88"
-    },
-    {
-      name: "James",
-      lapTime: "37.88",
-      velocity: "1.32",
-      stroke: "36",
-      dps: "1.39",
-      breathe: "13",
-      distanceUnderwater: "7.52",
-      diffLose: "+4.01",
-      diffTarget: "+4.23",
-      overallScore: "82"
-    },
-    {
-      name: "Krystle",
-      lapTime: "40.33",
-      velocity: "1.24",
-      stroke: "38",
-      dps: "1.32",
-      breathe: "14",
-      distanceUnderwater: "8.04",
-      diffLose: "+6.46",
-      diffTarget: "+6.68",
-      overallScore: "75"
-    },
-    {
-      name: "Victor",
-      lapTime: "33.87",
-      velocity: "1.48",
-      stroke: "32",
-      dps: "1.56",
-      breathe: "11",
-      distanceUnderwater: "6.47",
-      diffLose: "-",
-      diffTarget: "+0.22",
-      overallScore: "95"
-    },
-    {
-      name: "Chloe",
-      lapTime: "36.11",
-      velocity: "1.39",
-      stroke: "34",
-      dps: "1.47",
-      breathe: "12",
-      distanceUnderwater: "7.18",
-      diffLose: "+2.24",
-      diffTarget: "+2.46",
-      overallScore: "88"
-    },
-    
-   
+      overallScore: "75",
+      delay: 22000 // 22 seconds
+    }
   ];
+
+  useEffect(() => {
+    swimmers.forEach((swimmer) => {
+      setTimeout(() => {
+        setVisibleSwimmers((prev) => [...prev, swimmer.name]);
+      }, swimmer.delay);
+    });
+  }, []);
 
   return (
     <>
@@ -147,7 +87,6 @@ const SwimDashboard = () => {
                 </Link>
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-300 -mb-2"></div>
               </li>
-
               <li className="opacity-60">
                 <Link
                   to="/coaching"
@@ -229,22 +168,29 @@ const SwimDashboard = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {swimmers.map((swimmer, index) => (
-                    <tr
-                      key={swimmer.name}
-                      className={index % 2 === 0 ? "bg-gray-50 hover:bg-gray-100" : "hover:bg-gray-100"}
-                    >
-                      <td className="border px-4 py-2">{swimmer.name}</td>
-                      <td className="border px-4 py-2">{swimmer.lapTime}</td>
-                      <td className="border px-4 py-2">{swimmer.velocity}</td>
-                      <td className="border px-4 py-2">{swimmer.stroke}</td>
-                      <td className="border px-4 py-2">{swimmer.dps}</td>
-                      <td className="border px-4 py-2">{swimmer.breathe}</td>
-                      <td className="border px-4 py-2">{swimmer.distanceUnderwater}</td>
-                      <td className="border px-4 py-2">{swimmer.diffLose}</td>
-                      <td className="border px-4 py-2">{swimmer.diffTarget}</td>
-                      <td className="border px-4 py-2">{swimmer.overallScore}</td>
-                    </tr>
+                  {swimmers.map((swimmer) => (
+                    visibleSwimmers.includes(swimmer.name) && (
+                      <tr
+                        key={swimmer.name}
+                        className="animate-fadeIn bg-gray-50 hover:bg-gray-100"
+                        style={{
+                          animation: "fadeIn 0.5s ease-in",
+                          opacity: 0,
+                          animationFillMode: "forwards"
+                        }}
+                      >
+                        <td className="border px-4 py-2">{swimmer.name}</td>
+                        <td className="border px-4 py-2">{swimmer.lapTime}</td>
+                        <td className="border px-4 py-2">{swimmer.velocity}</td>
+                        <td className="border px-4 py-2">{swimmer.stroke}</td>
+                        <td className="border px-4 py-2">{swimmer.dps}</td>
+                        <td className="border px-4 py-2">{swimmer.breathe}</td>
+                        <td className="border px-4 py-2">{swimmer.distanceUnderwater}</td>
+                        <td className="border px-4 py-2">{swimmer.diffLose}</td>
+                        <td className="border px-4 py-2">{swimmer.diffTarget}</td>
+                        <td className="border px-4 py-2">{swimmer.overallScore}</td>
+                      </tr>
+                    )
                   ))}
                 </tbody>
               </table>
@@ -252,6 +198,21 @@ const SwimDashboard = () => {
           </div>
         </div>
       </div>
+
+      <style>
+        {`
+          @keyframes fadeIn {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}
+      </style>
     </>
   );
 };
